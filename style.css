@@ -1,0 +1,97 @@
+@import url('https://fonts.cdnfonts.com/css/seven-segment');
+
+.digital-font {
+    font-family: 'Digital-7', 'Seven Segment', 'Orbitron', sans-serif;
+    font-size: 48px;
+}
+
+:root {
+    --calc-color: rgb(93, 92, 95);
+    --back-color: rgb(34, 34, 34);
+    --btn-color: white;
+    --calc-shadow-color: rgba(65, 65, 65, 0.253);
+    --display-color: rgb(206, 213, 224);
+    --button-active-color: rgba(255, 166, 0, 0.877);
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+}
+
+
+body {
+    text-align: center;
+    display: flex;        
+    justify-content: center; 
+    align-items: center;     
+    height: 100vh;         
+    margin: 0;
+    background-color: var(--back-color);
+}
+
+
+.container {
+    padding-bottom: 30px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: fit-content;
+    width: fit-content;
+    margin: 0 auto;
+    background-color: var(--calc-color);
+    border-radius: 20px;
+    box-shadow: -3px -10px 0 0px var(--calc-shadow-color) inset,
+                 0 0 70px 30px rgba(182, 182, 182, 0.233);
+}
+
+
+.container button{
+    margin: 5px;
+    padding: 0;
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 2.2rem;
+    text-align: center;
+    border-radius: 7px;
+    font-weight: 800;
+    background-color: var(--btn-color);
+    box-shadow: -3px -5px 0 0px var(--calc-shadow-color) inset;
+}
+
+.container button:hover {
+    cursor: pointer;
+    background-color: orange;
+}
+
+.container button:active {
+    box-shadow: 3px 4px 0 0 rgba(0, 0, 0, 0.178) inset;
+    background-color: var(--button-active-color);
+}
+
+.container .display:hover {
+    cursor: text;
+}
+
+
+
+input {
+    font-family: 'Seven Segment', sans-serif;
+    box-shadow: 0px -8px 0px 0px var(--calc-shadow-color) inset;
+    background-color: var(--display-color);
+    width: 15rem;
+    word-wrap: break-word;
+    font-size: 46px;
+    text-align: right;
+    margin: 20px;
+    padding: 5px;
+    border-radius: 7px;
+}
+
+#equals {
+    background-color: orange;
+}
+
+#clear {
+    font-size: 30px;
+}
