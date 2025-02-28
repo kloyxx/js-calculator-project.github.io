@@ -2,7 +2,7 @@
 
 .digital-font {
     font-family: 'Digital-7', 'Seven Segment', 'Orbitron', sans-serif;
-    font-size: 48px;
+    font-size: 2vh;
 }
 
 :root {
@@ -17,6 +17,7 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
     border: none;
+    margin: 0;
 }
 
 
@@ -24,45 +25,50 @@ body {
     text-align: center;
     display: flex;        
     justify-content: center; 
-    align-items: center;     
-    height: 100vh;         
-    margin: 0;
+    align-content: center;
     background-color: var(--back-color);
+    padding: 10vh;
+    
 }
-
+input {
+    font-family: 'Seven Segment', sans-serif;
+    box-shadow: 0 -1vh 0 0 var(--calc-shadow-color) inset;
+    background-color: var(--display-color);
+    font-size: 10vh;
+    text-align: right;
+    border-radius: 1vh;
+}
+.calc {
+    height: 71vh;
+    background-color: var(--calc-color);
+    border-radius: 2vh;
+    box-shadow: -1vh -2vh 0 0 var(--calc-shadow-color) inset,
+                 0 0 2vh 2vh rgba(182, 182, 182, 0.233);
+}
 
 .container {
-    min-width: 50%;
-    padding-bottom: 30px;
-    padding-top: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
-    /* height: fit-content; */
-    /* width: fit-content; */
-    margin: 0 auto;
-    background-color: var(--calc-color);
-    border-radius: 20px;
-    box-shadow: -3px -10px 0 0px var(--calc-shadow-color) inset,
-                 0 0 70px 30px rgba(182, 182, 182, 0.233);
+    display: grid;
+    grid-template-columns: repeat(4, 10vh); 
+    grid-template-rows: repeat(6, 10vh);
+    gap: 1vh;
+    padding: 3vh;
 }
-
 
 .container button{
-    min-width: 50px;
-    margin: 5px;
-    padding-bottom: 25px;
-    width: 3.5rem;
-    height: 3.5rem;
-    font-size: 2.2rem;
+    font-size: 4.5vh;
     text-align: center;
-    border-radius: 7px;
-    font-weight: 800;
+    border-radius: 1.5vh;
+    font-weight: 700;
     background-color: var(--btn-color);
-    box-shadow: -3px -5px 0 0px var(--calc-shadow-color) inset;
+    box-shadow: -0.5vh -0.4vh 0 0 var(--calc-shadow-color) inset;
+    transition: all 0.1s;
 }
 
-.buttons {
-    min-width: 300px;
+.display {
+    grid-column: span 4;
+    grid-row: span 1;
+    word-wrap: break-word;
+    font-size: 8.5vh;
 }
 
 .container button:hover {
@@ -71,29 +77,14 @@ body {
 }
 
 .container button:active {
-    box-shadow: 3px 4px 0 0 rgba(0, 0, 0, 0.178) inset;
+    box-shadow: 0.5vh 1vh 0 0 rgba(0, 0, 0, 0.178) inset;
     background-color: var(--button-active-color);
     
 }
 
-.container .display:hover {
+.calc .display:hover {
     cursor: text;
-}
-
-
-
-input {
-    font-family: 'Seven Segment', sans-serif;
-    box-shadow: 0px -8px 0px 0px var(--calc-shadow-color) inset;
-    background-color: var(--display-color);
-    max-width: 15rem;
-    min-width: 15rem;
-    word-wrap: break-word;
-    font-size: 46px;
-    text-align: right;
-    margin: 20px;
-    padding: 5px;
-    border-radius: 7px;
+    font-size: 6.5vh;
 }
 
 
@@ -101,8 +92,17 @@ input {
     background-color: orange;
 }
 
-#clear, #clear-digit{
-    /* font-size: 30px; */
-    padding: 0 10px 5px 4px;
-    min-width: 126px;
+#clear{
+    font-weight: 800;
+}
+
+#clear-digit {
+    font-weight: 800;
+}
+#clear-digit {
+    grid-column: span 2;
+}
+
+#clear{
+    grid-column: span 2;
 }
