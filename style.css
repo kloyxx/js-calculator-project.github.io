@@ -38,6 +38,9 @@ input {
     text-align: right;
     border-radius: 1vh;
 }
+input::placeholder {
+    color: #525252;
+}
 .calc {
     height: 71vh;
     background-color: var(--calc-color);
