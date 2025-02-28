@@ -10,19 +10,20 @@ function appendToDisplay(input) {
     if(symbols_no_dot.includes(last_input)){
         dotIsTyped = false;
     }
-    if (display.value === "" && symbols.includes(input) && !symbols.includes(last_input)) {
+    if (display.value === "" && input !== "-" && symbols.includes(input) && !symbols.includes(last_input)) {
         return;
     }
 
-    if (!(symbols.includes(last_input) && symbols.includes(input))) {
-        display.value += input;
+    if (symbols.includes(last_input) && symbols.includes(input)) {
+        return;
     }
+    display.value += input;
 }
 
 function appendToDisplayDot(){
     if(!dotIsTyped){
-        dotIsTyped = true;
         appendToDisplay(".");
+        dotIsTyped = true;
     }
 }
 
@@ -31,18 +32,28 @@ function clearDisplay(){
     dotIsTyped = false;
 }
 
-function clearDigit(){
-    if(display.value !== ""){
-        display.value = display.value.slice(0,-1);
+function clearDigit() {
+    if (display.value !== "") {
+        let lastChar = display.value.slice(-1);
+        display.value = display.value.slice(0, -1);
+
+        
+        let parts = display.value.split(/[-+×/]/);
+        let lastNumber = parts[parts.length - 1];
+
+        dotIsTyped = lastNumber.includes(".");
     }
 }
-function calculate(){
-    
+function calculate() {
     try {
         let str_eval = display.value.replaceAll("×", "*");
-        display.value = eval(str_eval); 
-    } 
-    catch(error) {
-        display.value = "Error"; 
+        let result = eval(str_eval);
+
+        
+        display.value = result;
+        dotIsTyped = display.value.includes(".");
+    } catch (error) {
+        display.value = "Error";
     }
 }
+
