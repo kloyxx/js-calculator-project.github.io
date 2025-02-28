@@ -6,7 +6,7 @@ const symbols_no_dot = ["-","+","×","/"];
 let dotIsTyped = false;
 
 function appendToDisplay(input) {
-    
+
     let last_input = display.value.slice(-1);
 
     if(display.value === "0" && !symbols.includes(input)){
@@ -29,7 +29,7 @@ function appendToDisplay(input) {
 }
 
 function appendToDisplayDot(){
-    if(!dotIsTyped){
+    if(!dotIsTyped && display.value !== ""){
         appendToDisplay(".");
         dotIsTyped = true;
     }
@@ -46,13 +46,10 @@ function clearDisplay(){
 
         dotIsTyped = !lastNumber.includes(".");
     }
-    display.value = "0";
+    display.value = "";
 }
 
 function clearDigit() {
-    if(display.value === "0"){
-        return;
-    }
     if (display.value !== "") {
         // let lastChar = display.value.slice(-1);
         display.value = display.value.slice(0, -1);
