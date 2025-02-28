@@ -10,31 +10,31 @@
 <body>
     <div class="calc">
         <div class="container">
-            <input id="display" readonly>
-            <div class="buttons">
-                <button id="7" onclick="appendToDisplay('7')" type="button">7</button>
-                <button id="8" onclick="appendToDisplay('8')" type="button">8</button>
-                <button id="9" onclick="appendToDisplay('9')" type="button">9</button>
-                <button class="symbol" id="/" onclick="appendToDisplay('/')" type="button">&#247</button><br>
-    
-                <button id="4" onclick="appendToDisplay('4')" type="button">4</button>
-                <button id="5" onclick="appendToDisplay('5')" type="button">5</button>
-                <button id="6" onclick="appendToDisplay('6')" type="button">6</button>
-                <button class="symbol" id="x" onclick="appendToDisplay('&times')" type="button">&times</button><br>
-    
-                <button id="1" onclick="appendToDisplay('1')" type="button">1</button>
-                <button id="2" onclick="appendToDisplay('2')" type="button">2</button>
-                <button id="3" onclick="appendToDisplay('3')" type="button">3</button>
-                <button class="symbol" id="minus" onclick="appendToDisplay('-')" type="button">&#8722</button><br>
-    
-                <button id="0" onclick="appendToDisplay('0')">0</button>
-                <button class="symbol" id="." onclick="appendToDisplayDot('.')" type="button">.</button>
-                <button class="symbol" id="+" onclick="appendToDisplay('+')" type="button">&#43</button>
-                <button class="symbol" id="equals" onclick="calculate()" type="button">=</button><br>
-                
-                <button id="clear" onclick="clearDisplay()" type="button">AC</button>     
-                <button id="clear-digit" onclick="clearDigit()" type="button">&lt</button>       
-            </div>
+            <input id="display-id" class="display" readonly maxlength="7" value="0">
+            <!-- <div class="buttons"> -->
+            <button id="seven" onclick="appendToDisplay('7')" type="button">7</button>
+            <button id="8" onclick="appendToDisplay('8')" type="button">8</button>
+            <button id="9" onclick="appendToDisplay('9')" type="button">9</button>
+            <button class="symbol" id="/" onclick="appendToDisplay('/')" type="button">&#247</button>
+
+            <button id="4" onclick="appendToDisplay('4')" type="button">4</button>
+            <button id="5" onclick="appendToDisplay('5')" type="button">5</button>
+            <button id="6" onclick="appendToDisplay('6')" type="button">6</button>
+            <button class="symbol" id="x" onclick="appendToDisplay('&times')" type="button">&times</button>
+
+            <button id="1" onclick="appendToDisplay('1')" type="button">1</button>
+            <button id="2" onclick="appendToDisplay('2')" type="button">2</button>
+            <button id="3" onclick="appendToDisplay('3')" type="button">3</button>
+            <button class="symbol" id="minus" onclick="appendToDisplay('-')" type="button">&#8722</button>
+
+            <button id="0" onclick="appendToDisplay('0')">0</button>
+            <button class="symbol" id="." onclick="appendToDisplayDot('.')" type="button">.</button>
+            <button class="symbol" id="+" onclick="appendToDisplay('+')" type="button">&#43</button>
+            <button class="symbol" id="equals" onclick="calculate()" type="button">=</button>
+            
+            <button id="clear" onclick="clearDisplay()" type="button">AC</button>     
+            <button id="clear-digit" onclick="clearDigit()" type="button">&lt</button>       
+            <!-- </div> -->
         </div>
     </div>
     <script src="script.js"></script>
